@@ -1,0 +1,33 @@
+@mixin button(){
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover,
+        &:visited,
+        &:focus{
+            color: inherit;
+        }
+    }
+
+    height: auto;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+@mixin green-button(){
+    @include button();
+    background-color: $color-primary;
+    color: white;
+    border: none;
+}
+
+@mixin purple-button(){
+    @include button();
+    background-color: transparent;
+    color: $color-secondary;
+    border: 2px solid $color-secondary;
+}

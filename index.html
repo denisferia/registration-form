@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet">
+    <!--[if IE]>
+    <link href="/css/ie.css" media="screen, projection" rel="stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="registration-form">
+<div class="wrapper">
+    <header>
+        <section>
+            <section class="logo"><h1>InvertirOnline.com</h1></section>
+            <input type="checkbox" id="hamburguer-menu" />
+            <label for="hamburguer-menu"></label>
+            <div class="hamburguer-menu">
+                <section>
+                    <div class="login">
+                        <h4>Tengo Cuenta</h4>
+                        <button><a href="#">Ingresar</a></button>
+                    </div>
+                    <div class="sign-up">
+                        <h4>¿Todavía no tenés tu cuenta?</h4>
+                        <button><a href="#">Registrarme</a></button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </header>
+    <article>
+        <form class="main">
+            <h2>¡Comencemos el registro!</h2>
+
+            <section id="name">
+                <div>
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Ingresá tu nombre como figura en el DNI" required />
+                    <small>Campo Obligatorio</small>
+                </div>
+                <div>
+                    <label>Apellido</label>
+                    <input type="text" placeholder="Ingresá tu apellido como figura en el DNI" required />
+                    <small>Campo Obligatorio</small>
+                </div>
+            </section>
+            <section id="email">
+                <div>
+                    <label>Email</label>
+                    <input type="email" placeholder="minombre@ejemplo.com" required />
+                    <small>Campo Obligatorio</small>
+                </div>
+                <div>
+                    <label>Confirmar Email</label>
+                    <input type="email" placeholder="minombre@ejemplo.com" required />
+                    <small>Campo Obligatorio</small>
+                </div>
+            </section>
+            <section id="phone">
+                <div>
+                    <label>Celular</label>
+                    <input type="text" placeholder="ej: 00000000" maxlength="3" required class="tel-area-code" /><input type="text" placeholder="ej: 00000000" maxlength="8" required class="tel-number" />
+                    <small>Campo Obligatorio</small>
+                </div>
+            </section>
+            <section id="password">
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="*******" maxlength="10" required />
+                    <div class="verifier">
+                        <small class="chars">8 caracteres</small>
+                        <small class="number">1 número</small>
+                    </div>
+                </div>
+                <div>
+                    <label>Repetí tu Contraseña</label>
+                    <input type="password" placeholder="*******" maxlength="10" required />
+                    <small>Campo Obligatorio</small>
+                </div>
+            </section>
+            <p class="legal">Al registrarme acepto haber leído y estar de acuerdo con las <a>condiciones de uso</a> y <a>política de privacidad</a>.</p>
+            <input type="submit" value="Registrarme" />
+        </form>
+    </article>
+    <footer>
+        <p>&reg; Copyright 2019 InvertirOnline.com - San Martín 323 piso 11, CABA, Argentina. Tel. 0810-1222-465</p>
+    </footer>
+</div>
+</body>
+</html>
