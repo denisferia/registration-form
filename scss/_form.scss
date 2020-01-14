@@ -6,6 +6,24 @@
         box-sizing: border-box;
     }
 
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $bg-color-gray;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        &,&:hover {
+            background: $color-primary-variant;
+        }
+    }
+
+    button {
+        cursor: pointer;
+    }
+
     .wrapper {
         overflow-x: hidden;
         overflow-y: auto;
@@ -169,7 +187,8 @@
             height: auto;
         }
 
-        h2 {
+        h2,
+        h6 {
             font-size: 18px;
             font-weight: bold;
             color: $color-txt;
@@ -197,6 +216,7 @@
             font-size: 13px;
             color: $color-txt;
             line-height: 1.5;
+            font-weight: normal;
 
             &.legal {
                 margin: 35px 0 20px;
@@ -209,6 +229,7 @@
 
             a {
                 color: $color-txt-link;
+                text-decoration: none;
 
                 &:hover {
                     text-decoration: underline;
@@ -250,12 +271,13 @@
             display: block;
             width: 100%;
             padding: 0 0 5px;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.5;
-            color: #495057;
+            color: $color-txt;
             background-color: unset;
             border-radius: 0;
             height: 28px;
+            font-family: $notoSans-font-family;
 
             @include input-placeholder{
                 opacity: 0.6;
@@ -264,6 +286,7 @@
             }
 
             @include bp(max-width,$bp-small){
+                font-size: 12px;
 
                 @include input-placeholder{
                     font-style: normal;
@@ -277,7 +300,10 @@
                 outline: none;
             }
 
-
+            &:-internal-autofill-selected {
+                background-color: unset;
+                color: #495057;
+            }
 
             &.tel-area-code{
                 width: calc(29% - 10px);
@@ -340,13 +366,32 @@
         }
 
         div {
-            &.error {
+            &.error,
+            &.unconfirmed {
 
                 input {
                     border-bottom: 1px solid $color-txt-error;
 
                     + small {
                         visibility: visible;
+                    }
+                }
+            }
+
+            &.confirmed {
+                input {
+                    border-bottom: 1px solid $color-primary;
+
+                    + small {
+                        visibility: visible;
+                        font-size: 0;
+
+                        &:after {
+                            content: "√";
+                            background-color: $color-primary;
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
                     }
                 }
             }
@@ -394,6 +439,138 @@
                     }
                 }
             }
+        }
+
+        &.confirmed {
+            background-color: transparent;
+            box-shadow: unset;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 80%;
+                    max-width: 400px;
+                    height: 170px;
+                    background: url("../assets/exito-registro.svg") no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+
+                h3 {
+                    font-size: 	26px;
+                    font-weight: bold;
+                    color: $color-txt;
+                }
+
+                p {
+                    font-size: 13px;
+                    color: $color-txt;
+                    line-height: 1.5;
+                    margin: 30px auto;
+                }
+
+                button {
+                    @include green-button();
+                    width: 100%;
+                    max-width: 290px;
+                }
+            }
+        }
+    }
+
+    .modal {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0, 0.4);
+            z-index: -1;
+        }
+
+        article {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 9%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(50% - 10px);
+            max-width: 800px;
+            height: 90vh;
+            margin: 0 auto;
+            padding: 25px 10px 25px 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+
+            @include bp(max-width,$bp-medium){
+                width: calc(100% - 10px);
+            }
+
+            @include bp(max-width,$bp-small){
+                margin: 0 7px;
+                padding: 20px;
+            }
+
+            section {
+                display: block;
+                overflow-y: scroll;
+                height: 80%;
+            }
+
+            p {
+                margin-top: 5px;
+                margin-bottom: 20px;
+                padding-right: 10px;
+            }
+        }
+
+        .close {
+            @include appearance(none);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+
+            &:before {
+                content:"";
+                display: block;
+                width: 17px;
+                height: 16px;
+                background: url("../assets/close.png") no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .continue {
+            @include appearance(none);
+            border: none;
+            @include purple-button();
+            display: block;
+            width: 60%;
+            margin: 0 auto;
         }
     }
 

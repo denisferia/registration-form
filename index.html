@@ -13,7 +13,7 @@
     <header>
         <section>
             <section class="logo"><h1>InvertirOnline.com</h1></section>
-            <input type="checkbox" id="hamburguer-menu" />
+            <input autocomplete="off" type="checkbox" id="hamburguer-menu" />
             <label for="hamburguer-menu"></label>
             <div class="hamburguer-menu">
                 <section>
@@ -30,44 +30,44 @@
         </section>
     </header>
     <article>
-        <form class="main">
+        <form class="main" autocomplete="off">
             <h2>¡Comencemos el registro!</h2>
 
             <section id="name">
                 <div>
                     <label>Nombre</label>
-                    <input type="text" placeholder="Ingresá tu nombre como figura en el DNI" />
+                    <input autocomplete="off" type="text" placeholder="Ingresá tu nombre como figura en el DNI" />
                     <small>Campo Obligatorio</small>
                 </div>
                 <div>
                     <label>Apellido</label>
-                    <input type="text" placeholder="Ingresá tu apellido como figura en el DNI" />
+                    <input autocomplete="off" type="text" placeholder="Ingresá tu apellido como figura en el DNI" />
                     <small>Campo Obligatorio</small>
                 </div>
             </section>
             <section id="email">
                 <div>
                     <label>Email</label>
-                    <input type="email" placeholder="minombre@ejemplo.com" />
+                    <input autocomplete="off" type="email" placeholder="minombre@ejemplo.com" class="confirm-me" />
                     <small>Campo Obligatorio</small>
                 </div>
                 <div>
                     <label>Confirmar Email</label>
-                    <input type="email" class="confirmation" placeholder="minombre@ejemplo.com" />
-                    <small>Campo Obligatorio</small>
+                    <input autocomplete="off" type="email" class="confirmation" placeholder="minombre@ejemplo.com" />
+                    <small>Error al confirmar, por favor verifique</small>
                 </div>
             </section>
             <section id="phone">
                 <div>
                     <label>Celular</label>
-                    <input type="tel" placeholder="ej: 00000000" maxlength="3" class="tel-area-code" /><input type="tel" placeholder="ej: 00000000" maxlength="8" class="tel-number" />
+                    <input autocomplete="off" type="tel" placeholder="ej: 00000000" maxlength="3" class="tel-area-code" /><input autocomplete="off" type="tel" placeholder="ej: 00000000" maxlength="8" class="tel-number" />
                     <small>Campo Obligatorio</small>
                 </div>
             </section>
             <section id="password">
                 <div>
                     <label>Contraseña</label>
-                    <input type="password" placeholder="*******" maxlength="10" />
+                    <input autocomplete="off" type="password" placeholder="*******" maxlength="10" class="confirm-me" />
                     <div class="verifier">
                         <small class="chars">8 caracteres</small>
                         <small class="number">1 número</small>
@@ -75,14 +75,40 @@
                 </div>
                 <div>
                     <label>Repetí tu Contraseña</label>
-                    <input type="password" class="confirmation" placeholder="*******" maxlength="10" />
-                    <small>Campo</small>
+                    <input autocomplete="off" type="password" class="confirmation" placeholder="*******" maxlength="10" />
+                    <small>Error al confirmar, por favor verifique</small>
                 </div>
             </section>
-            <p class="legal">Al registrarme acepto haber leído y estar de acuerdo con las <a>condiciones de uso</a> y <a>política de privacidad</a>.</p>
-            <input type="submit" value="Registrarme" />
+            <p class="legal">Al registrarme acepto haber leído y estar de acuerdo con las <a href="#">condiciones de uso y política de privacidad</a>.</p>
+            <input autocomplete="off" type="submit" value="Registrarme" />
         </form>
     </article>
+    <section class="modal" id="modal-legales">
+        <article class="tyc">
+            <button class="close"></button>
+            <h6>Términos y condiciones de uso
+            <p>Última Actualización: Diciembre 2018</p></h6>
+            <section>
+            <p>GENERAL<br>
+                El acceso a este Sitio y la utilización de sus servicios está sujeto a los términos y condiciones generales que se establecen a continuación, y a las de índole particular que aparecen en sus anexos o en las carteleras de una determinada página del mismo (en adelante, los "Términos y Condiciones"). De continuar Ud. (en adelante, el "Usuario") la visita de este Sitio, se entenderá que presta su conformidad con los Términos y Condiciones.</p>
+
+            <p>Estos Términos y Condiciones podrán estar sujetos a actualizaciones y/o modificaciones, las que entrarán en vigencia a partir del plazo definido a tal efecto en el Anexo C del presente.</p>
+
+            <p>Servicio.<br>
+                Éste consiste en un medio de información, publicidad y comunicaciones on-line provisto por INVERTIRONLINE.com ARGENTINA S.A. o sus afiliadas (en adelante, " el Titular "), y supone la aceptación por el Usuario de estos Términos y Condiciones.</p>
+
+            <p>La información contenida en el Sitio proviene de varias fuentes, entre las que se cuentan los propios Usuarios del Servicio ("Proveedores de Información"). Dicha información no puede considerarse exhaustiva, completa, o que satisfará todas las necesidades del Usuario. En su gran mayoría, esa información está meramente destinada a permitir al Usuario el acceso a una mayor cantidad de datos sobre el tema de su interés, los que generalmente son provistos por terceros, sin un efectivo control por parte del Titular, por lo que se sugiere al Usuario que lea con especial cuidado estos Términos y Condiciones.</p>
+
+            <p>Responsabilidad por la Información contenida en el Servicio.<br>
+            El Titular no se responsabiliza por los daños y perjuicios que pudiera ocasionar el uso de la información que provee el Servicio, salvo que hubiera obrado con el propósito de causar daño.</p>
+
+            <p>El Titular no garantiza la veracidad o vigencia de esa información, ni que dicha información no haya sido alterada, luego de su inserción en el Sitio.</p>
+
+            <p>En caso que el Usuario se sienta agraviado o perjudicado por esa información, deberá dirigir su acción exclusivamente contra el Proveedor de la misma. En tal supuesto, a pedido del Usuario, el Titular pondrá a su disposición, en la medida que los posea, los datos necesarios para que pueda hacer su reclamo.</p>
+            </section>
+            <button class="continue"> <a>Continuar</a> </button>
+        </article>
+    </section>
     <footer>
         <p>&reg; Copyright 2019 InvertirOnline.com - San Martín 323 piso 11, CABA, Argentina. Tel. 0810-1222-465</p>
     </footer>
